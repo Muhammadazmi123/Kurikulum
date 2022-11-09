@@ -16,3 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('layouts.master');
 });
+
+Route::get('/rpl','RplController@indexrpl');
+Route::get('/Add','AddController@AddRpl');
