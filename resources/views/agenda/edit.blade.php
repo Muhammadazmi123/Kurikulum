@@ -14,19 +14,17 @@
   <h2><a href="https://www.malasngoding.com">www.malasngoding.com</a></h2>
   <h3>Edit Pegawai</h3>
 
-  <a href="/pegawai"> Kembali</a>
+  <a href="/agenda"> Kembali</a>
 
   <br />
   <br />
 
-  @foreach($pegawai as $p)
-  <form action="/pegawai/update" method="post">
+  @foreach($tb_agenda as $p)
+  <form action="/agenda/update" method="post">
     {{ csrf_field() }}
-    <input type="hidden" name="id" value="{{ $p->pegawai_id }}"> <br />
-    Nama <input type="text" required="required" name="nama" value="{{ $p->pegawai_nama }}"> <br />
-    Jabatan <input type="text" required="required" name="jabatan" value="{{ $p->pegawai_jabatan }}"> <br />
-    Umur <input type="number" required="required" name="umur" value="{{ $p->pegawai_umur }}"> <br />
-    Alamat <textarea required="required" name="alamat">{{ $p->pegawai_alamat }}</textarea> <br />
+    <input type="hidden" name="id" value="{{ $p->id }}"> <br />
+    Nama Kegiatan<input type="text" required="required" name="nama" value="{{ $p->nama_kegiatan}}"> <br />
+    Implementasi Kurikulum <input type="text" required="required" name="jabatan" value="{{ $p->implementasi_kurikulum }}"> <br />
     <input type="submit" value="Simpan Data">
   </form>
   @endforeach

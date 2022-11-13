@@ -22,7 +22,7 @@
   <form action="/agenda/store" method="post">
     {{ csrf_field() }}
     Nama Kegiatan<input type="text" name="nama_kegiatan"> <br />
-    Implementasi Kurikulum<input type="text" name="implemntasi_kurikulum"> <br />
+    Implementasi Kurikulum<input type="text" name="implementasi_kurikulum"> <br />
     <input type="submit" value="Simpan Data">
   </form>
 

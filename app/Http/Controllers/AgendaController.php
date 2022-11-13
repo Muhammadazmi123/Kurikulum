@@ -15,7 +15,7 @@ class AgendaController extends Controller
     $tb_agenda = DB::table('tb_agenda')->get();
 
     // mengirim data tb_agenda ke view index
-    return view('agenda', ['tb_agenda' => $tb_agenda]);
+    return view('agenda.agenda', ['tb_agenda' => $tb_agenda]);
   }
 
   // method untuk menampilkan view form tambah tb_agenda
@@ -23,7 +23,7 @@ class AgendaController extends Controller
   {
 
     // memanggil view tambah
-    return view('tambah');
+    return view('agenda.tambah');
   }
 
   // method untuk insert data ke table tb_agenda
@@ -32,7 +32,7 @@ class AgendaController extends Controller
     // insert data ke table tb_agenda
     DB::table('tb_agenda')->insert([
       'nama_kegiatan' => $request->nama_kegiatan,
-      'implementasi_kurikulum' => $request->implementasi_kurikulum,
+      'implementasi_kurikulum' => $request->implementasi_kurikulum
     ]);
     // alihkan halaman ke halaman agenda
     return redirect('/agenda');
@@ -44,7 +44,7 @@ class AgendaController extends Controller
     // mengambil data tb_agenda berdasarkan id yang dipilih
     $tb_agenda = DB::table('tb_agenda')->where('id', $id)->get();
     // passing data agenda yang didapat ke view edit.blade.php
-    return view('edit', ['tb_agenda' => $tb_agenda]);
+    return view('agenda.edit', ['tb_agenda' => $tb_agenda]);
   }
 
   // update data agenda
@@ -53,7 +53,7 @@ class AgendaController extends Controller
     // update data agenda
     DB::table('tb_agenda')->where('id', $request->id)->update([
       'nama_kegiatan' => $request->nama_kegiatan,
-      'implementasi_kurikulum' => $request->implementasi_kurikulum,
+      'implementasi_kurikulum' => $request->implementasi_kurikulum
     ]);
     // alihkan halaman ke halaman agenda
     return redirect('/agenda');
