@@ -34,18 +34,20 @@
     <nav class="mt-2">
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
         <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
+                  with  font-awesome or any other icon font library -->
         <li class="nav-item menu-open">
-          <a href="/agenda" class="nav-link active">
-            <i class="nav-icon fas fa-tachometer-alt"></i>
+          <a href="/agenda" class="nav-link">
+            <i class="fa-solid fa-calendar-days"></i>
             <p>
               Agenda
             </p>
           </a>
+
         </li>
+
         <li class="nav-item menu-open">
-          <a href="#" class="nav-link active">
-            <i class="nav-icon fas fa-tachometer-alt"></i>
+          <a href="#" class="nav-link">
+            <i class="fa-solid fa-star"></i>
             <p>
               Nilai
               <i class="right fas fa-angle-left"></i>
@@ -53,7 +55,7 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="./index.html" class="nav-link active">
+              <a href="./index.html" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>XII RPL</p>
               </a>
@@ -73,8 +75,8 @@
           </ul>
         </li>
         <li class="nav-item menu-open">
-          <a href="#" class="nav-link active">
-            <i class="nav-icon fas fa-tachometer-alt"></i>
+          <a href="#" class="nav-link">
+            <i class="fa-solid fa-list"></i>
             <p>
               Kehadiran
               <i class="right fas fa-angle-left"></i>
@@ -82,7 +84,7 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="./index.html" class="nav-link active">
+              <a href="./index.html" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>XII RPL</p>
               </a>

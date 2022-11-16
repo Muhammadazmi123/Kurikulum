@@ -28,3 +28,6 @@ Route::post('/agenda/store', 'AgendaController@store');
 Route::get('/agenda/edit/{id}', 'AgendaController@edit');
 Route::post('/agenda/update', 'AgendaController@update');
 Route::get('/agenda/hapus/{id}', 'AgendaController@hapus');
+
+// edit
+// Route::match(['get', 'post'], '/edit{id}', 'AgendaController@edit');

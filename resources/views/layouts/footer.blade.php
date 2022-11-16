@@ -36,6 +36,8 @@
 <!-- daterangepicker -->
 <script src="{{asset('AdminLTE')}}/plugins/moment/moment.min.js"></script>
 <script src="{{asset('AdminLTE')}}/plugins/daterangepicker/daterangepicker.js"></script>
+<!-- Font Awesome -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/all.min.js" integrity="sha512-rpLlll167T5LJHwp0waJCh3ZRf7pO6IT1+LZOhAyP6phAirwchClbTZV3iqL3BMrVxIYRbzGTpli4rfxsCK6Vw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <!-- Tempusdominus Bootstrap 4 -->
 <script src="{{asset('AdminLTE')}}/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
 <!-- Summernote -->
@@ -45,7 +47,7 @@
 <!-- AdminLTE App -->
 <script src="{{asset('AdminLTE')}}/dist/js/adminlte.js"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="{{asset('AdminLTE')}}/dist/js/demo.js"></script>
+<!-- <script src="{{asset('AdminLTE')}}/dist/js/demo.js"></script> -->
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{asset('AdminLTE')}}/dist/js/pages/dashboard.js"></script>
 </body>

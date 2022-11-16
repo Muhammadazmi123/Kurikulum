@@ -44,7 +44,7 @@ class AgendaController extends Controller
     // mengambil data tb_agenda berdasarkan id yang dipilih
     $tb_agenda = DB::table('tb_agenda')->where('id', $id)->get();
     // passing data agenda yang didapat ke view edit.blade.php
-    return view('agenda.edit', ['tb_agenda' => $tb_agenda]);
+    return view('agenda', ['tb_agenda' => $tb_agenda]);
   }
 
   // update data agenda
