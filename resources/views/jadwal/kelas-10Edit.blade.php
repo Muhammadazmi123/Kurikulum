@@ -15,12 +15,12 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>Edit Agenda</h1>
+          <h1>Edit Jadwal</h1>
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item active">Edit Agenda</li>
+            <li class="breadcrumb-item active">Edit Jadwal</li>
           </ol>
         </div>
       </div>
@@ -35,23 +35,31 @@
         <div class="col">
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title"> Tabel Edit Agenda</h3>
+              <h3 class="card-title"> Tabel Edit Jadwal</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-            <a href="/agenda" type="button" class="btn btn-primary mb-3"><i class="fa-solid fa-arrow-left"></i> Kembali</a>  
+              <a href="/jadwal/kelas-10" type="button" class="btn btn-primary mb-3"><i class="fa-solid fa-arrow-left"></i> Kembali</a>  
               <table class="table table-bordered table-hover">
-                @foreach($tb_agenda as $p)
-                <form action="/agenda/update" method="post">
+                @foreach($tb_jadwal as $p)
+                <form action="/jadwal/update" method="post">
                 {{ csrf_field() }}
           <div class="mb-3">
             <input type="hidden" name="id" value="{{ $p->id }}">
-            <label for="exampleInputEmail1" class="form-label">Nama Kegiatan</label>
-            <input type="text" required="required" name="nama_kegiatan" value="{{ $p->nama_kegiatan }}" class="form-control" aria-describedby="emailHelp">
+            <label for="exampleInputEmail1" class="form-label">Nama</label>
+            <input type="text" required="required" name="nama" value="{{ $p->nama}}" class="form-control" aria-describedby="emailHelp">
           </div>
           <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Implementasi Kurikulum</label>
-            <input type="text" required="required" name="implementasi_kurikulum" value="{{ $p->implementasi_kurikulum }}" class=" form-control">
+            <label for="exampleInputPassword1" class="form-label">Jenis Kelamin</label>
+            <input type="text" required="required" name="jk" value="{{ $p->jk }}" class=" form-control">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Jam Mengajar</label>
+            <input type="text" required="required" name="jam" value="{{ $p->jam }}" class=" form-control">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Mata Pelajaran</label>
+            <input type="text" required="required" name="mapel" value="{{ $p->mapel }}" class=" form-control">
           </div>
           <button type="submit" class="btn btn-success">Simpan Data</button>
           </form>

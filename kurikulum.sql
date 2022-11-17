@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 09, 2022 at 04:52 PM
+-- Generation Time: Nov 17, 2022 at 06:47 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -33,34 +33,19 @@ CREATE TABLE `tb_agenda` (
   `implementasi_kurikulum` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `tb_agenda`
---
-
-INSERT INTO `tb_agenda` (`id`, `nama_kegiatan`, `implementasi_kurikulum`) VALUES
-(1, 'wqe', 'eqw');
-
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_nilai`
+-- Table structure for table `tb_jadwal`
 --
 
-CREATE TABLE `tb_nilai` (
+CREATE TABLE `tb_jadwal` (
   `id` int(11) NOT NULL,
-  `nisn` int(10) NOT NULL,
   `nama` varchar(255) NOT NULL,
   `jk` varchar(255) NOT NULL,
-  `kelas` varchar(255) NOT NULL,
-  `nilai` varchar(100) NOT NULL
+  `jam` varchar(255) NOT NULL,
+  `mapel` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `tb_nilai`
---
-
-INSERT INTO `tb_nilai` (`id`, `nisn`, `nama`, `jk`, `kelas`, `nilai`) VALUES
-(1, 123123213, 'adsasd', 'laki laki', '12 rpl', '100');
 
 --
 -- Indexes for dumped tables
@@ -73,9 +58,9 @@ ALTER TABLE `tb_agenda`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tb_nilai`
+-- Indexes for table `tb_jadwal`
 --
-ALTER TABLE `tb_nilai`
+ALTER TABLE `tb_jadwal`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -86,13 +71,13 @@ ALTER TABLE `tb_nilai`
 -- AUTO_INCREMENT for table `tb_agenda`
 --
 ALTER TABLE `tb_agenda`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `tb_nilai`
+-- AUTO_INCREMENT for table `tb_jadwal`
 --
-ALTER TABLE `tb_nilai`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE `tb_jadwal`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

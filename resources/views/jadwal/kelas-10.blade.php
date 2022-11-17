@@ -4,9 +4,9 @@
 <!-- Bootstrap -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 <!-- DataTables -->
-<!-- <link rel="stylesheet" href="{{asset('AdminLTE')}}/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+<link rel="stylesheet" href="{{asset('AdminLTE')}}/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
 <link rel="stylesheet" href="{{asset('AdminLTE')}}/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-<link rel="stylesheet" href="{{asset('AdminLTE')}}/plugins/datatables-buttons/css/buttons.bootstrap4.min.css"> -->
+<link rel="stylesheet" href="{{asset('AdminLTE')}}/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
 
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -15,12 +15,12 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>Agenda</h1>
+          <h1>Jadwal Guru</h1>
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item active">Agenda</li>
+            <li class="breadcrumb-item active">Jadwal Guru</li>
           </ol>
         </div>
       </div>
@@ -35,7 +35,7 @@
         <div class="col">
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title"> Tabel Agenda</h3>
+              <h3 class="card-title"> Tabel Jadwal Guru</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
@@ -44,27 +44,31 @@
                 <thead>
                   <tr>
                     <th>No</th>
-                    <th>Nama Kegiatan</th>
-                    <th>Implementasi Kurikulum</th>
-                    <th>Action</th>
+                    <th>Nama</th>
+                    <th>Jenis Kelamin</th>
+                    <th>Jam Mengajar</th>
+                    <th>Mata Pelajaran</th>
+                    <th>Aksi</th>
                   </tr>
                 </thead>
-                @foreach($tb_agenda as $p)
+                @foreach($tb_jadwal as $p)
                 <tbody>
                   <tr>
                     <td>{{ $p->id }}</td>
-                    <td>{{ $p->nama_kegiatan }}</td>
-                    <td>{{ $p->implementasi_kurikulum }}
-                    </td>
+                    <td>{{ $p->nama }}</td>
+                    <td>{{ $p->jk }}</td>
+                    <td>{{ $p->jam }}</td>
+                    <td>{{ $p->mapel }}</td>
                     <td>
-                      <a href="/agenda/edit/{{ $p->id }}"><i class="fa-solid fa-pen-to-square"></i></a>
+                      <a href="/jadwal/edit/{{ $p->id }}"><i class="fa-solid fa-pen-to-square"></i></a>
                       |
-                      <a href="/agenda/hapus/{{ $p->id }}"><i class="fa-solid fa-trash" style="color: red;"></i></a>
+                      <a href="/jadwal/hapus/{{ $p->id }}"><i class="fa-solid fa-trash" style="color: red;"></i></a>
                     </td>
                   </tr>
                 </tbody>
                 @endforeach
               </table>
+
             </div>
           </div>
           <!-- /.card-body -->
@@ -89,58 +93,33 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="/agenda/store" method="post">
+        <form action="/jadwal/store" method="post">
           {{ csrf_field() }}
           <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Nama Kegiatan</label>
-            <input type="text" name="nama_kegiatan" class="form-control" aria-describedby="emailHelp">
+            <label for="exampleInputEmail1" class="form-label">Nama</label>
+            <input type="text" name="nama" class="form-control" aria-describedby="emailHelp">
           </div>
           <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Implementasi Kurikulum</label>
-            <input type="text" name="implementasi_kurikulum" class=" form-control">
+            <label for="exampleInputPassword1" class="form-label">Jenis Kelamin</label>
+            <input type="text" name="jk" class=" form-control">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Jam Mengajar</label>
+            <input type="text" name="jam" class=" form-control">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Mata Pelajaran</label>
+            <input type="text" name="mapel" class=" form-control">
           </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kembali</button>
-        <button type="submit" value="Simpan Data" class="btn btn-primary">Simpan Data</button>
+        <button type="submit" value="Simpan Data" class="btn btn-success">Simpan Data</button>
         </form>
       </div>
     </div>
   </div>
 </div>
-
-
-<!-- Modal  -->
-<!-- @foreach($tb_agenda as $p)
-<div class="modal fade" id="editModal{{ $p->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form action="/agenda/update" method="post">
-          {{ csrf_field() }}
-          <div class="mb-3">
-            <input type="hidden" name="id" value="{{ $p->id }}">
-            <label for="exampleInputEmail1" class="form-label">Nama Kegiatan</label>
-            <input type="text" required="required" name="nama_kegiatan" value="{{ $p->nama_kegiatan }}" class="form-control" aria-describedby="emailHelp">
-          </div>
-          <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Implementasi Kurikulum</label>
-            <input type="text" required="required" name="implementasi_kurikulum" value="{{ $p->implementasi_kurikulum }}" class=" form-control">
-          </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kembali</button>
-        <button type="submit" value="Simpan Data" class="btn btn-primary">Simpan Data</button>
-        </form>
-        @endforeach
-      </div>
-    </div>
-  </div>
-</div> -->
 
 @include('layouts.footer')
 
@@ -160,7 +139,7 @@
 <script src="{{asset('AdminLTE')}}/plugins/datatables-buttons/js/buttons.print.min.js"></script>
 <script src="{{asset('AdminLTE')}}/plugins/datatables-buttons/js/buttons.colVis.min.js"></script> -->
 
-<!-- <script>
+<script>
   $(function() {
     $("#example1").DataTable({
       "responsive": true,
@@ -178,4 +157,4 @@
       "responsive": true,
     });
   });
-</script> -->
+</script>

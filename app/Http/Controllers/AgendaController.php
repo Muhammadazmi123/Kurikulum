@@ -19,12 +19,12 @@ class AgendaController extends Controller
   }
 
   // method untuk menampilkan view form tambah tb_agenda
-  public function tambah()
-  {
+  // public function tambah()
+  // {
 
-    // memanggil view tambah
-    return view('agenda.tambah');
-  }
+  //   // memanggil view tambah
+  //   return view('agenda.tambah');
+  // }
 
   // method untuk insert data ke table tb_agenda
   public function store(Request $request)
@@ -44,7 +44,7 @@ class AgendaController extends Controller
     // mengambil data tb_agenda berdasarkan id yang dipilih
     $tb_agenda = DB::table('tb_agenda')->where('id', $id)->get();
     // passing data agenda yang didapat ke view edit.blade.php
-    return view('agenda', ['tb_agenda' => $tb_agenda]);
+    return view('agenda.edit', ['tb_agenda' => $tb_agenda]);
   }
 
   // update data agenda
