@@ -15,8 +15,8 @@ class JadwalPiketImport implements ToModel
     public function model(array $row)
     {
         return new JadwalPiket([
-            'hari'      => $row['1'],
-            'nama'     => $row['2'], 
+            'nama'     => $row['1'], 
+            'hari'      => $row['2'],
         ]);
     }
 }

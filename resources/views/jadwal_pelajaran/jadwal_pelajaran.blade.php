@@ -47,8 +47,8 @@
                         <thead>
                             <tr>
                                 <th>Id</th>
-                                <th>Hari</th>
                                 <th>Nama Siswa</th>
+                                <th>Hari</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
@@ -57,9 +57,8 @@
                             <tbody>
                                 <tr>
                                     <td>{{ $id++ }}</td>
+                                    <td>{{ $p->nama }}</td>
                                     <td>{{ $p->hari }}</td>
-                                    <td>{{ $p->nama }}
-                                    </td>
                                     <td>
                                         <a href="/jadwal_pelajaran/edit/{{ $p->id }}"
                                             class="btn icon btn-sm btn-primary"><i class="bi bi-pencil"></i></a>
@@ -87,7 +86,8 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form action="{{ url('import') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ url('/jadwal_pelajaran/import') }}" method="POST"
+                            enctype="multipart/form-data">
                             @csrf
                             <div class="row">
                                 <div class="col">
@@ -127,13 +127,13 @@
                         <form action="/jadwal_pelajaran/store" method="post">
                             {{ csrf_field() }}
                             <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">Nama</label>
+                                <input type="text" name="nama" class=" form-control">
+                            </div>
+                            <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Hari</label>
                                 <input type="text" name="hari" class="form-control"
                                     aria-describedby="emailHelp">
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleInputPassword1" class="form-label">Nama</label>
-                                <input type="text" name="nama" class=" form-control">
                             </div>
                     </div>
                     <div class="modal-footer">

@@ -36,8 +36,8 @@ class JadwalPelajaranController extends Controller
   {
     // insert data ke table tb_agenda
     DB::table('jadwal_pelajaran')->insert([
-      'hari' => $request->hari,
-      'nama' => $request->nama
+      'nama' => $request->nama,
+      'hari' => $request->hari
     ]);
     // alihkan halaman ke halaman agenda
     return redirect('/jadwal_pelajaran');
@@ -57,8 +57,8 @@ class JadwalPelajaranController extends Controller
   {
     // update data agenda
     DB::table('jadwal_pelajaran')->where('id', $request->id)->update([
-      'hari' => $request->hari,
-      'nama' => $request->nama
+      'nama' => $request->nama,
+      'hari' => $request->hari
     ]);
     // alihkan halaman ke halaman agenda
     return redirect('/jadwal_pelajaran');
@@ -73,6 +73,7 @@ class JadwalPelajaranController extends Controller
     // alihkan halaman ke halaman agenda
     return redirect('/jadwal_pelajaran');
   }
+  
   public function import(Request $request){
     //melakukan import file
     Excel::import(new JadwalPelajaranImport, request()->file('file'));

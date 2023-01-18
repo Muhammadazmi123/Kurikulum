@@ -9,5 +9,5 @@ class JadwalPiket extends Model
 {
     use HasFactory;
     protected $table = "jadwal_piket";
-    protected $fillable = ['hari','nama'];
+    protected $fillable = ['nama', 'hari'];
 }

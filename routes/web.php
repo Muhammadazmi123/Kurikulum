@@ -28,8 +28,8 @@ Route::post('/jadwal_piket/store', 'JadwalPiketController@store');
 Route::get('/jadwal_piket/edit/{id}', 'JadwalPiketController@edit');
 Route::post('/jadwal_piket/update', 'JadwalPiketController@update');
 Route::get('/jadwal_piket/hapus/{id}', 'JadwalPiketController@hapus');
-Route::post('/import',  [JadwalPiketController::class, 'import']);
-Route::get('/export', [JadwalPiketController::class, 'export']);
+Route::post('/jadwal_piket/import', 'JadwalPiketController@import');
+Route::get('/jadwal_piket/export','JadwalPiketController@export');
 
 
 //route CRUD Jadwal Pelajaran
@@ -38,5 +38,5 @@ Route::post('/jadwal_pelajaran/store', 'JadwalPelajaranController@store');
 Route::get('/jadwal_pelajaran/edit/{id}', 'JadwalPelajaranController@edit');
 Route::post('/jadwal_pelajaran/update', 'JadwalPelajaranController@update');
 Route::get('/jadwal_pelajaran/hapus/{id}', 'JadwalPelajaranController@hapus');
-Route::post('/import', 'JadwalPelajaranController@import');
-Route::get('/export', 'JadwalPelajaranController@export');
+Route::post('/jadwal_pelajaran/import', 'JadwalPelajaranController@import');
+Route::get('/jadwal_pelajaran/export', 'JadwalPelajaranController@export');
