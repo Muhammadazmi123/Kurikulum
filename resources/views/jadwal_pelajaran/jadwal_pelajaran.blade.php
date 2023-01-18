@@ -42,7 +42,7 @@
                         data-bs-target="#import">
                         Import
                     </button>
-                    <a href="/export" class="btn btn-outline-success mb-3 ">Export</a>
+                    <a href="/jadwal_pelajaran/export" class="btn btn-outline-success mb-3 ">Export</a>
                     <table class="table table-lg">
                         <thead>
                             <tr>
