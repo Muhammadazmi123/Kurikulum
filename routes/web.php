@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\JadwalPiketController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,6 +28,9 @@ Route::post('/jadwal_piket/store', 'JadwalPiketController@store');
 Route::get('/jadwal_piket/edit/{id}', 'JadwalPiketController@edit');
 Route::post('/jadwal_piket/update', 'JadwalPiketController@update');
 Route::get('/jadwal_piket/hapus/{id}', 'JadwalPiketController@hapus');
+Route::post('/import',  [JadwalPiketController::class, 'import']);
+Route::get('/export', [JadwalPiketController::class, 'export']);
+
 
 //route CRUD Jadwal Pelajaran
 Route::get('/jadwal_pelajaran', 'JadwalPelajaranController@jadwal_pelajaran');
@@ -34,3 +38,5 @@ Route::post('/jadwal_pelajaran/store', 'JadwalPelajaranController@store');
 Route::get('/jadwal_pelajaran/edit/{id}', 'JadwalPelajaranController@edit');
 Route::post('/jadwal_pelajaran/update', 'JadwalPelajaranController@update');
 Route::get('/jadwal_pelajaran/hapus/{id}', 'JadwalPelajaranController@hapus');
+Route::post('/import', 'JadwalPelajaranController@import');
+Route::get('/export', 'JadwalPelajaranController@export');

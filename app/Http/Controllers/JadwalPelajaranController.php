@@ -4,6 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Imports\JadwalPelajaranImport;
+use App\Exports\JadwalPelajaranExport;
+use Maatwebsite\Excel\Facades\Excel;
+
+
 
 
 class JadwalPelajaranController extends Controller
@@ -68,4 +73,16 @@ class JadwalPelajaranController extends Controller
     // alihkan halaman ke halaman agenda
     return redirect('/jadwal_pelajaran');
   }
+  public function import(Request $request){
+    //melakukan import file
+    Excel::import(new JadwalPelajaranImport, request()->file('file'));
+    //jika berhasil kembali ke halaman sebelumnya
+    return back();
+}
+public function export() 
+{
+    return Excel::download(new JadwalPelajaranExport, 'jadwal_pelajaran.xlsx');
+    return back();
+}
+
 }
