@@ -87,7 +87,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form action="{{ url('import') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ url('/jadwal_piket/import') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
                                 <div class="col">
