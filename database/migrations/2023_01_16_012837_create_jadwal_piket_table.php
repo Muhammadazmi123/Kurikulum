@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('jadwal_piket', function (Blueprint $table) {
             $table->id();
-            $table->string('hari');
             $table->string('nama');
+            $table->string('hari');
             $table->timestamps();
         });
     }

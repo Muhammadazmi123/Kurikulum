@@ -46,7 +46,7 @@
                     <table class="table table-lg">
                         <thead>
                             <tr>
-                                <th>Id</th>
+                                <th>No</th>
                                 <th>Nama Siswa</th>
                                 <th>Hari</th>
                                 <th>Aksi</th>
@@ -109,7 +109,6 @@
                 </div>
             </div>
         </div>
-
         <!-- Modal  -->
         <div class="modal fade" id="tambahModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
             aria-hidden="true">

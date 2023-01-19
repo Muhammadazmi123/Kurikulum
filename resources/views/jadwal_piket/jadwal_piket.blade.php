@@ -80,7 +80,7 @@
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
                 <div class="modal-content">
                     <div class="modal-header bg-success">
-                        <h5 class="modal-title white" id="myModalLabel110">Success Modal
+                        <h5 class="modal-title white" id="myModalLabel110">Import Excel
                         </h5>
                         <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                             <i data-feather="x"></i>

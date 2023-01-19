@@ -36,17 +36,18 @@
                                     <form action="/jadwal_pelajaran/update" method="post">
                                         {{ csrf_field() }}
                                         <div class="mb-3">
+                                            <label for="exampleInputPassword1" class="form-label">Nama</label>
+                                            <input type="text" required="required" name="nama"
+                                                value="{{ $p->nama }}" class=" form-control">
+                                        </div>
+                                        <div class="mb-3">
                                             <input type="hidden" name="id" value="{{ $p->id }}">
                                             <label for="exampleInputEmail1" class="form-label">Hari</label>
                                             <input type="text" required="required" name="hari"
                                                 value="{{ $p->hari }}" class="form-control"
                                                 aria-describedby="emailHelp">
                                         </div>
-                                        <div class="mb-3">
-                                            <label for="exampleInputPassword1" class="form-label">Nama</label>
-                                            <input type="text" required="required" name="nama"
-                                                value="{{ $p->nama }}" class=" form-control">
-                                        </div>
+
                                         <button type="submit" class="btn btn-success">Simpan Data</button>
                                     </form>
                                 @endforeach
